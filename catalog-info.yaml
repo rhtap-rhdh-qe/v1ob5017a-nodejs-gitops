@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: v1ob5017a-nodejs-gitops
+  description: This is GitOps manifest for v1ob5017a-nodejs   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: rhtap/gitops=v1ob5017a-nodejs
+    backstage.io/kubernetes-id: v1ob5017a-nodejs 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: v1ob5017a-nodejs
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:v1ob5017a-nodejs
